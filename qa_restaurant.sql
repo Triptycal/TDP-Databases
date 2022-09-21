@@ -12,11 +12,12 @@ DESCRIBE customers; #display the details of the tables
 DROP TABLE items; #deletes a table (DELETE - DDL)
 DROP DATABASE qa_restaurant; #delete a database (DELETE - DDL)
 
-INSERT INTO customers(cust_name, phone_number) VALUES("Amy","07946621661"); #(CREATE -DML)
-INSERT INTO customers(cust_name, phone_number) VALUES("Becci","97946621111");
-INSERT INTO customers(cust_name, phone_number) VALUES("Cathy","97923621123");
-INSERT INTO customers(cust_name, phone_number) VALUES("Dean","97923622233");
-INSERT INTO customers(cust_name, phone_number) VALUES("Eddy","97924441123");
+INSERT INTO customers(cust_name, phone_number) VALUES
+("Amy","07946621661"),
+("Becci","97946621111"),
+("Cathy","97923621123"),
+("Dean","97923622233"),
+("Eddy","97924441123"); #(CREATE -DML)
 
 UPDATE customers SET cust_name="Fred", phone_number="11233333333" WHERE cust_id=2;
 UPDATE customers SET cust_name="Grace", phone_number="11255782333" WHERE cust_id=1;
@@ -35,11 +36,12 @@ SHOW TABLES; #display all the tables in the database you're in (READ - DDL)
 
 DESCRIBE items; #display the details of the tables
 
-INSERT INTO items(item_name, item_price) VALUES("Apple",0.65); #(CREATE -DML)
-INSERT INTO items(item_name, item_price) VALUES("Burger",1.84);
-INSERT INTO items(item_name, item_price) VALUES("Carrot",0.79);
-INSERT INTO items(item_name, item_price) VALUES("Duck",6.89);
-INSERT INTO items(item_name, item_price) VALUES("Elair",1.29);
+INSERT INTO items(item_name, item_price) VALUES
+("Apple",0.65), #(CREATE -DML)
+("Burger",1.84),
+("Carrot",0.79),
+("Duck",6.89),
+("Elair",1.29);
 
 UPDATE items SET item_name="Flour", item_price=2.45 WHERE item_id=2;
 UPDATE items SET item_name="Grapes", item_price=1.59 WHERE item_id=1;
