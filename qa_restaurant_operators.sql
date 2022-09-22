@@ -3,7 +3,7 @@
 #- SELECT col1, col2, col4 FROM table_name;
 #WHERE clause
 # - SELECT * FROM table_name WHERE col_name=value;
-SELECT * FROM order_items WHERE ord_id=2;#filtering what you see
+SELECT * FROM order_items WHERE order_id=2;#filtering what you see
 
 #OPERATORS
 # = equals to...
@@ -13,10 +13,10 @@ SELECT * FROM order_items WHERE ord_id=2;#filtering what you see
 # >= - inclusive 
 # <= - inclusive
 SELECT * FROM items;
-SELECT * FROM items WHERE price>5.00;
-SELECT * FROM items WHERE price!=5.00;
-SELECT * FROM items WHERE price>1.00 AND price<5.00;
-SELECT * FROM items WHERE price BETWEEN 1.00 AND 5.00; #INCLUSIVE RANGE - includes the numbers stated
+SELECT * FROM items WHERE item_price>5.00;
+SELECT * FROM items WHERE item_price!=5.00;
+SELECT * FROM items WHERE item_price>1.00 AND price<5.00;
+SELECT * FROM items WHERE item_price BETWEEN 1.00 AND 5.00; #INCLUSIVE RANGE - includes the numbers stated
 # search for patterns - text data
 SELECT * FROM items WHERE item_name LIKE "%y"; # finds any item_name that ends with y
 SELECT * FROM items WHERE item_name LIKE "c%"; #finds any item_ name that begins with c
