@@ -27,8 +27,12 @@ SELECT Population,Name FROM country WHERE (Population is NOT NULL AND Population
 Population ASC limit 1;
 
 #9.	Using aggregate functions, return the number of countries the database contains.
-10.	What are the top ten largest countries by area?
-11.	List the five largest cities by population in Japan.
+SELECT COUNT(name) FROM country;
+#10.	What are the top ten largest countries by area?
+#Russian Federation,Antarctica,Canada,China,United States,Brazil,Australia,India,Argentina,Kazakstan
+SELECT name,SurfaceArea FROM country WHERE SurfaceArea is NOT NULL ORDER BY 
+SurfaceArea DESC limit 10;
+#11.	List the five largest cities by population in Japan.
 12.	List the names and country codes of every country with Elizabeth II as its Head of State. You will need to fix the mistake first!
 13.	List the top ten countries with the smallest population-to-area ratio. Discard any countries with a ratio of 0.
 14.	List every unique world language.
