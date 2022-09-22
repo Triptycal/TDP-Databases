@@ -4,8 +4,8 @@ order_id INT NOT NULL,
 item_id INT NOT NULL,
 quantity INT NOT NULL,
 PRIMARY KEY(oi_id),
-FOREIGN KEY (order_id) REFERENCES orders(order_id),
-FOREIGN KEY (item_id) REFERENCES items(item_id));
+FOREIGN KEY (order_id) REFERENCES orders(order_id) ON DELETE CASCADE,
+FOREIGN KEY (item_id) REFERENCES items(item_id) ON DELETE CASCADE);
 
 INSERT INTO order_items(order_id, item_id,quantity) VALUES
 (1,2,3), #(CREATE -DML)

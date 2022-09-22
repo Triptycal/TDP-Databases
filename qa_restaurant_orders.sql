@@ -4,7 +4,7 @@ cust_id INT NOT NULL,
 order_date DATE NOT NULL,
 total_price DECIMAL(11,2) NOT NULL,
 PRIMARY KEY(order_id),
-FOREIGN KEY (cust_id) REFERENCES customers(cust_id));
+FOREIGN KEY (cust_id) REFERENCES customers(cust_id) ON DELETE CASCADE);
 
 INSERT INTO orders(cust_id, order_date,total_price) VALUES
 (1,"2022-09-18",8.64), #(CREATE -DML)
