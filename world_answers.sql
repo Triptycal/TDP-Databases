@@ -33,7 +33,11 @@ SELECT COUNT(name) FROM country;
 SELECT name,SurfaceArea FROM country WHERE SurfaceArea is NOT NULL ORDER BY 
 SurfaceArea DESC limit 10;
 #11.	List the five largest cities by population in Japan.
-12.	List the names and country codes of every country with Elizabeth II as its Head of State. You will need to fix the mistake first!
+#Tokyo, Jokohama [Yokohama],Osaka,Nagoya,Sapporo
+SELECT city.name,city.Population FROM city JOIN Country ON city.CountryCode=Country.Code WHERE Country.Name="Japan" ORDER BY 
+city.Population DESC limit 5;
+
+#12.	List the names and country codes of every country with Elizabeth II as its Head of State. You will need to fix the mistake first!
 13.	List the top ten countries with the smallest population-to-area ratio. Discard any countries with a ratio of 0.
 14.	List every unique world language.
 15.	List the names and GNP of the world's top 10 richest countries.
