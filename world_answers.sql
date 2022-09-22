@@ -22,7 +22,11 @@ SELECT * FROM city WHERE name LIKE "f%" LIMIT 25;
 
 SELECT COUNT(city.name) FROM city JOIN Country ON city.CountryCode=Country.Code WHERE Country.Name="China";
 #8.	Using IS NOT NULL, ORDER BY, and LIMIT, which country has the lowest population? Discard non-zero populations.
-9.	Using aggregate functions, return the number of countries the database contains.
+#50	Pitcairn
+SELECT Population,Name FROM country WHERE (Population is NOT NULL AND Population>0) ORDER BY 
+Population ASC limit 1;
+
+#9.	Using aggregate functions, return the number of countries the database contains.
 10.	What are the top ten largest countries by area?
 11.	List the five largest cities by population in Japan.
 12.	List the names and country codes of every country with Elizabeth II as its Head of State. You will need to fix the mistake first!
