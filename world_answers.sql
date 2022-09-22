@@ -12,6 +12,9 @@ LifeExpectancy DESC limit 1;
 Madrid
 SELECT City.Name FROM country JOIN city ON country.Capital=city.ID WHERE country.name="Spain";
 5.	Using JOIN ... ON, list all the languages spoken in the Southeast Asia region.
+47 languages
+SELECT DISTINCT countrylanguage.Language FROM countrylanguage JOIN country ON countrylanguage.CountryCode=country.Code WHERE country.Region="Southeast Asia";
+
 6.	Using a single query, list 25 cities around the world that start with the letter F.
 7.	Using COUNT and JOIN ... ON, get the number of cities in China.
 8.	Using IS NOT NULL, ORDER BY, and LIMIT, which country has the lowest population? Discard non-zero populations.
