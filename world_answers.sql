@@ -38,11 +38,31 @@ SELECT city.name,city.Population FROM city JOIN Country ON city.CountryCode=Coun
 city.Population DESC limit 5;
 
 #12.	List the names and country codes of every country with Elizabeth II as its Head of State. You will need to fix the mistake first!
-13.	List the top ten countries with the smallest population-to-area ratio. Discard any countries with a ratio of 0.
-14.	List every unique world language.
-15.	List the names and GNP of the world's top 10 richest countries.
-16.	List the names of, and number of languages spoken by, the top ten most multilingual countries.
-17.	List every country where over 50% of its population can speak German.
-18.	Which country has the worst life expectancy? Discard zero or null values.
-19.	List the top three most common government forms.
-20.	How many countries have gained independence since records began?
+UPDATE country SET HeadOfState="Elizabeth II" WHERE HeadOfState="Elisabeth II";
+SELECT code,name FROM country WHERE HeadOfState="Elizabeth II";
+#35 rows returned
+
+#13.	List the top ten countries with the smallest population-to-area ratio. Discard any countries with a ratio of 0.
+SELECT name,population,SurfaceArea FROM country WHERE (Population is NOT NULL AND Population>0) ORDER BY 
+(population/SurfaceArea) ASC limit 10;
+
+#14.	List every unique world language.
+SELECT DISTINCT language FROM countrylanguage; 
+#457
+#15.	List the names and GNP of the world's top 10 richest countries.
+SELECT name,GNP FROM country ORDER BY GNP DESC limit 10;
+#16.	List the names of, and number of languages spoken by, the top ten most multilingual countries.
+SELECT country.name,COUNT(countrylanguage.language)
+FROM countrylanguage 
+JOIN Country ON countrylanguage.CountryCode=Country.Code  
+GROUP BY countrylanguage.CountryCode
+ORDER BY COUNT(countrylanguage.language) DESC limit 10; 
+#17.	List every country where over 50% of its population can speak German.
+SELECT country.name,countrylanguage.percentage
+FROM countrylanguage 
+JOIN Country ON countrylanguage.CountryCode=Country.Code 
+WHERE (countrylanguage.percentage>50) AND countrylanguage.language="German"
+ORDER BY countrylanguage.percentage DESC; 
+#18.	Which country has the worst life expectancy? Discard zero or null values.
+#19.	List the top three most common government forms.
+#20.	How many countries have gained independence since records began?
