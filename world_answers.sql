@@ -62,7 +62,20 @@ SELECT country.name,countrylanguage.percentage
 FROM countrylanguage 
 JOIN Country ON countrylanguage.CountryCode=Country.Code 
 WHERE (countrylanguage.percentage>50) AND countrylanguage.language="German"
-ORDER BY countrylanguage.percentage DESC; 
+ORDER BY countrylanguage.percentage DESC;
+#Austria 92.0,Germany 91.3,Liechtenstein 89.0 ,Switzerland 63.6
 #18.	Which country has the worst life expectancy? Discard zero or null values.
+# Zambia	37.2
+SELECT name,LifeExpectancy 
+FROM country
+WHERE (LifeExpectancy is NOT NULL AND LifeExpectancy>0)
+ORDER BY LifeExpectancy ASC limit 1;
 #19.	List the top three most common government forms.
+#Republic 122, Constitutional Monarchy 29,Federal Republic 15
+SELECT GovernmentForm, COUNT(GovernmentForm)
+FROM country
+GROUP BY GovernmentForm
+ORDER BY COUNT(GovernmentForm) DESC limit 3;
 #20.	How many countries have gained independence since records began?
+#192
+SELECT COUNT(IndepYear) FROM country WHERE (IndepYear is NOT NULL AND IndepYear);
